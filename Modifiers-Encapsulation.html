@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Topic 3 - Access Modifiers and Encapsulation</h1>
+    <h1 id="person1"></h1>
+
+    <script>
+        class Person{
+
+            //Data (private) Fields
+            #name;
+            #age;
+            #gender;
+            #height;
+            #weight;
+
+            constructor(name, age, gender, height, weight) {
+                this.#name = name;
+                this.#age = age;
+                this.#gender = gender;
+                this.#height = height;
+                this.#weight = weight;
+            }
+
+            //getters to return the private data field
+            get name() {
+                return this.#name;
+            }
+            get age() {
+                return this.#age;
+            }
+            get gender() {
+                return this.#gender;
+            }
+            get height() {
+                return this.#height;
+            }
+            get weight() {
+                return this.#weight;
+            }
+
+             //Displays output via Console.log
+             displayInfo() {
+                console.log("Name: " + this.name);
+                console.log("Age: " + this.age);
+                console.log("Gender: " + this.gender);
+            }
+
+            //Displays output via HTML
+            displayInfoViaHTML() {
+                const personElement = document.getElementById('person1');
+                personElement.innerHTML = `
+                  <strong>Name: </strong> ${this.name} <br>
+                  <strong>Age: </strong> ${this.age} <br>
+                  <strong>Gender:</strong> ${this.gender} <br>
+                  <strong>Height:</strong> ${this.height} <br>
+                  <strong>Weight: </strong> ${this.weight} 
+                `;
+            }
+        }
+
+        //Creating an instance of the Person Class
+        const person1 = new Person('Fhiona', 19, 'Female', '4/11', 55);
+
+        //Calling methods
+       person1.displayInfo();
+       person1.displayInfoViaHTML();
+    </script>
+</body>
+</html>
+
